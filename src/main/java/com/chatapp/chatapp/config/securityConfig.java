@@ -32,7 +32,7 @@ public class securityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("https://yourfrontend.netlify.app")); // Allow Netlify frontend
+        configuration.setAllowedOrigins(List.of("https://chatapptest0.netlify.app")); // Allow Netlify frontend
         configuration.setAllowedMethods(List.of("GET", "POST"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
