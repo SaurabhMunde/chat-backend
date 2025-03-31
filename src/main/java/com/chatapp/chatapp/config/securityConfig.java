@@ -45,13 +45,10 @@ public class securityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()
-                .authorizeHttpRequests(auth -> auth
-                        .anyRequest().authenticated()
-                )
-                .formLogin()
+                .cors().configurationSource(corsConfigurationSource()) // Enable CORS
                 .and()
-                .httpBasic();
+                .csrf().disable()  // Disable CSRF for WebSockets
+                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
 
         return http.build();
     }
